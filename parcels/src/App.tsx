@@ -13,14 +13,15 @@ import { collection, onSnapshot } from 'firebase/firestore';
 
 function App() {
   const [count, setCount] = useState(0)
+    
   
   useEffect(()=> {
     //Using onSnapshot as it is like a react hook
-    const unSub = onSnapshot(collection(db,"p3"), (snapshot) => {
+    const onSub = onSnapshot(collection(db,"p3"), (snapshot) => {
       console.log(snapshot.docs.map(doc => doc.data()));
     });
-    return unSub;
-  },[]); // Empty array when useing
+    return onSub;
+  });
   
 
   return (
