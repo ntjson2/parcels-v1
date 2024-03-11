@@ -1,0 +1,11 @@
+npm create vite@latest
+react -> typescript
+
+npm i bootstrap react-bootstrap
+npm i -D scss
+npm install -D sass
+
+# Anthing ending with .. module.scss is a custom style
+
+
+https://www.youtube.com/watch?v=zuptcy3gLwQ
