@@ -5,6 +5,7 @@ import ListData from './components/ListData';
 import NavBar from './components/NavBar';
 import AddMinedMinerals from './components/AddMinedMineral';
 import ParcelList from './components/ParcelList';
+import MinedUserMinerals from './components/MinedUserMinerals';
 
 
 function App() {
@@ -15,13 +16,10 @@ function App() {
       <NavBar/>
       <ParcelList parcels={[]} />
       <AddMinedMinerals/>
-     
-     {/*  <DatePicker/>  */}   
+      <MinedUserMinerals parcels={[]} />     
       <TotalWidget/>
       <ListData/>         
  
-
-
     </>
   )
 }

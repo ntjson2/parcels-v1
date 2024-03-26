@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import mps from './mps';
 
 // AddMinedMinerals component, this component will be used to add mined minerals by the user
 const AddMinedMinerals: React.FC = () => {
@@ -101,91 +102,4 @@ const AddMinedMinerals: React.FC = () => {
 
     export default AddMinedMinerals;
     
-    const mps = {
-        1: {
-            id: 1,
-            name: "Gold",
-            commonName: "Gold",
-            chemicalName: "Au",
-            color: "yellow",
-            hardness: 2.5,
-            density: 19.3,
-            luster: "metallic",
-            streak: "yellow",
-            crystalSystem: "cubic",
-            cleavage: "none",
-            chemicalFormula: "Au",
-            transparency: "opaque",
-            refractiveIndex: 1.0,
-            desc: "A precious metal with a bright yellow color."
-        },
-        2: {
-            id: 2,
-            name: "Jasper",
-            commonName: "Jasper",
-            chemicalName: "SiO2",
-            color: "red",
-            hardness: 7,
-            density: 2.6,
-            luster: "vitreous",
-            streak: "white",
-            crystalSystem: "hexagonal",
-            cleavage: "none",
-            chemicalFormula: "SiO2",
-            transparency: "transparent",
-            refractiveIndex: 1.54,
-            desc: "A type of quartz with a red color and glassy luster."
-        },
-        3: {
-            id: 3,
-            name: "Silver",
-            commonName: "Silver",
-            chemicalName: "Ag",
-            color: "silver",
-            hardness: 2.5,
-            density: 10.5,
-            luster: "metallic",
-            streak: "silver",
-            crystalSystem: "cubic",
-            cleavage: "none",
-            chemicalFormula: "Ag",
-            transparency: "opaque",
-            refractiveIndex: 1.0,
-            desc: "A shiny, white metal often used in jewelry and coins."
-        },
-        4: {
-            id: 4,
-            name: "Garnet",
-            commonName: "Garnet",
-            chemicalName: "Fe3Al2Si3O12",
-            color: "red",
-            hardness: 6.5,
-            density: 3.6,
-            luster: "vitreous",
-            streak: "white",
-            crystalSystem: "cubic",
-            cleavage: "none",
-            chemicalFormula: "Fe3Al2Si3O12",
-            transparency: "transparent",
-            refractiveIndex: 1.72,
-            desc: "A group of minerals with similar crystal structures and varying colors."
-        },
-        5: {
-            id: 5,
-            name: "Copper",
-            commonName: "Copper",
-            chemicalName: "Cu",
-            color: "orange",
-            hardness: 2.5,
-            density: 8.96,
-            luster: "metallic",
-            streak: "orange",
-            crystalSystem: "cubic",
-            cleavage: "none",
-            chemicalFormula: "Cu",
-            transparency: "opaque",
-            refractiveIndex: 1.0,
-            desc: "A reddish-orange metal commonly used in electrical wiring and plumbing."
-        }
-    };
 
