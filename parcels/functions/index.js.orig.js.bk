@@ -1,0 +1,142 @@
+/* // The Cloud Functions for Firebase SDK to create Cloud Functions and triggers.
+const {logger} = require("firebase-functions");
+const {onRequest} = require("firebase-functions/v2/https");
+const {onDocumentCreated} = require("firebase-functions/v2/firestore");
+
+// The Firebase Admin SDK to access Firestore.
+const {initializeApp} = require("firebase-admin/app");
+const {getFirestore} = require("firebase-admin/firestore");
+
+initializeApp();
+
+
+
+// Take the text parameter passed to this HTTP endpoint and insert it into
+// Firestore under the path /messages/:documentId/original
+exports.addmessage = onRequest(async (req, res) => {
+    // Grab the text parameter.
+    const original = req.query.text;
+    // Push the new message into Firestore using the Firebase Admin SDK.
+    const writeResult = await getFirestore()
+        .collection("messages")
+        .add({original: original});
+    // Send back a message that we've successfully written the message
+    res.json({result: `Message with ID: ${writeResult.id} added.`});
+  });
+
+
+// Listens for new messages added to /messages/:documentId/original
+// and saves an uppercased version of the message
+// to /messages/:documentId/uppercase
+exports.makeuppercase = onDocumentCreated("/messages/{documentId}", (event) => {
+    // Grab the current value of what was written to Firestore.
+    const original = event.data.data().original;
+  
+    // Access the parameter `{documentId}` with `event.params`
+    logger.log("Uppercasing", event.params.documentId, original);
+  
+    const uppercase = original.toUpperCase();
+  
+    // You must return a Promise when performing
+    // asynchronous tasks inside a function
+    // such as writing to Firestore.
+    // Setting an 'uppercase' field in Firestore document returns a Promise.
+    return event.data.ref.set({uppercase}, {merge: true});
+  });
+ */
+
+  
+/* 
+  //item.displayData.map((data, index) => {
+
+  const objResult = mps[id];
+  logger.info("-- objResult", objResult);
+
+  //response.send("Hello from Firebase!");
+  //res.send({result: objResult});
+  //res.send("Hello from Firebase!");
+  res.json({result: `Message with id: ${id} added.`}); 
+
+
+ const mps = {
+    1: {
+        name: "Gold",
+        commonName: "Gold",
+        chemicalName: "Au",
+        color: "yellow",
+        hardness: 2.5,
+        density: 19.3,
+        luster: "metallic",
+        streak: "yellow",
+        crystalSystem: "cubic",
+        cleavage: "none",
+        chemicalFormula: "Au",
+        transparency: "opaque",
+        refractiveIndex: 1.0,
+        desc: "A precious metal with a bright yellow color."
+    },
+    2: {
+        name: "Jasper",
+        commonName: "Jasper",
+        chemicalName: "SiO2",
+        color: "red",
+        hardness: 7,
+        density: 2.6,
+        luster: "vitreous",
+        streak: "white",
+        crystalSystem: "hexagonal",
+        cleavage: "none",
+        chemicalFormula: "SiO2",
+        transparency: "transparent",
+        refractiveIndex: 1.54,
+        desc: "A type of quartz with a red color and glassy luster."
+    },
+    3: {
+        name: "Silver",
+        commonName: "Silver",
+        chemicalName: "Ag",
+        color: "silver",
+        hardness: 2.5,
+        density: 10.5,
+        luster: "metallic",
+        streak: "silver",
+        crystalSystem: "cubic",
+        cleavage: "none",
+        chemicalFormula: "Ag",
+        transparency: "opaque",
+        refractiveIndex: 1.0,
+        desc: "A shiny, white metal often used in jewelry and coins."
+    },
+    4: {
+        name: "Garnet",
+        commonName: "Garnet",
+        chemicalName: "Fe3Al2Si3O12",
+        color: "red",
+        hardness: 6.5,
+        density: 3.6,
+        luster: "vitreous",
+        streak: "white",
+        crystalSystem: "cubic",
+        cleavage: "none",
+        chemicalFormula: "Fe3Al2Si3O12",
+        transparency: "transparent",
+        refractiveIndex: 1.72,
+        desc: "A group of minerals with similar crystal structures and varying colors."
+    },
+    5: {
+        name: "Copper",
+        commonName: "Copper",
+        chemicalName: "Cu",
+        color: "orange",
+        hardness: 2.5,
+        density: 8.96,
+        luster: "metallic",
+        streak: "orange",
+        crystalSystem: "cubic",
+        cleavage: "none",
+        chemicalFormula: "Cu",
+        transparency: "opaque",
+        refractiveIndex: 1.0,
+        desc: "A reddish-orange metal commonly used in electrical wiring and plumbing."
+    }
+};  */

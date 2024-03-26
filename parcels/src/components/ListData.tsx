@@ -1,73 +1,68 @@
-/* const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
-const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
+// q: Other attributes related to mineralology that mineralProps should contain? 
 
-initializeApp();
-const db = getFirestore();
-const docRef = db.collection('users').doc('alovelace');
 
-await docRef.set({
-  first: 'Ada',
-  last: 'Lovelace',
-  born: 1815
-});
-
-const aTuringRef = db.collection('users').doc('aturing');
-
-await aTuringRef.set({
-  'first': 'Alan',
-  'middle': 'Mathison',
-  'last': 'Turing',
-  'born': 1912
-});
-
-const snapshot = await db.collection('users').get();
-snapshot.forEach((doc) => {
-  console.log(doc.id, '=>', doc.data());
-});
-
- */
-
-const ListData = () =>{
-    const minerals = {
-        item1:{
-            mineral:"Gold",
-            grams: 1.4,
-            subParcel: 6,
-            displayData:[4,1,2,543,2,6,934]
-        }, 
-        item2:{
-            mineral:"Jasper",
-            grams: 1.4,
-            subParcel: 6,
-            displayData:[4,214,2,5,2,6,9]
-        },
-        item3:{
-            mineral:"Silver",
-            grams: 0.4,
-            subParcel: 6,
-            displayData:[4.1,2,4.5,2,643,9]
-        }
+const minerals = {
+    item1: {
+        id: 1,
+        mineral: "Gold",
+        grams: 1.4,
+        subParcel: 6,
+        displayData: [4, 1, 2, 543, 2, 6, 934]
+    },
+    item2: {
+        id: 2,
+        mineral: "Jasper",
+        grams: 1.4,
+        subParcel: 6,
+        displayData: [4, 214, 2, 5, 2, 6, 9]
+    },
+    item3: {
+        id: 3,
+        mineral: "Silver",
+        grams: 0.4,
+        subParcel: 6,
+        displayData: [4.1, 2, 4.5, 2, 643, 9],            
+    },
+    item4: {
+        id: 4,
+        mineral: "Garnet",
+        grams: 1.2,
+        subParcel: 6,
+        displayData: [1, 3, 5, 7, 9, 11, 13]
+    },
+    item5: {
+        id: 5,
+        mineral: "Copper",
+        grams: 0.8,
+        subParcel: 6,
+        displayData: [2, 4, 6, 8, 10, 12, 14]
     }
+};
 
-    return(
+const ListData = () => {
+   
+    return (
         <div className="m-3 border rounded text-center">
             {Object.entries(minerals).map(([_, item]) => {
-                return(
-                    <div className="border-bottom">
-                        <p>
-                           <h3>{item.mineral}</h3> 
-                           grams {item.grams}
-                        </p>
+                return (
+                    <div className="border-bottom" key={item.id}>
+                        <h3>{item.mineral}</h3>
+                        <p>Avg grams per/ton {item.grams}</p>
                         <p>
                             <small>
-                                {item.displayData.map((data)=>{
-                                    return( 
-                                        <span className="badge rounded-pill text-bg-primary me-2">{data}</span>
+                                Map Locations: {item.displayData.map((data, index) => {
+                                    return (
+                                        <span
+                                            key={index}
+                                            className="badge rounded-pill text-bg-primary me-2"
+                                        >
+                                            {data}
+                                        </span>
                                     );
                                 })}
                             </small>
                         </p>
-                    </div>    
+                    </div>
                 );
             })}
         </div>

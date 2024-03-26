@@ -5,7 +5,48 @@ npm i bootstrap react-bootstrap
 npm i -D scss
 npm install -D sass
 
+npm i axios -save
+
 # Anthing ending with .. module.scss is a custom style
 
 
 https://www.youtube.com/watch?v=zuptcy3gLwQ
+
+
+
+# Firebase 
+$ cd parcels
+$ npm install -g firebase-tools
+$ firebase init
+
+
+ $ firebase init
+– $ firebase serve
+– $ firebase deploy --only functions
+
+
+$npm run build
+? What do you want to use as your public directory? dist
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
+? File dist/index.html already exists. Overwrite? No
+i  Skipping write of dist/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+$ firebase deploy --only hosting
+
+
+Misc
+--------
+firebase emulators:start --only functions
+ 
+ Local api
+ http://127.0.0.1:5001/ntjsonn/us-central1/apiAddMineralID?mineralid=2&userid=8776
+
+ Request
+https://apiaddmineralid-uoeckaebja-uc.a.run.app?mineralid=1&userid=4337
+
+CORS client fix - attemp 1
+npm install http-proxy-middleware
